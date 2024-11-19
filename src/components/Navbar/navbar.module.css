@@ -1,21 +1,41 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #34495e;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
 }
 .logo {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.navLinks {
+.navLinksLg {
   display: flex;
   align-items: center;
   gap: 2rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navLinksSm {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .link {

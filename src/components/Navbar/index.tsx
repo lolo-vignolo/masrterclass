@@ -19,7 +19,7 @@ export const Navbar = () => {
         />
         <h1 className={styles.title}>Masterclass DevAccelerator</h1>
       </div>
-      <div className={styles.navLinks}>
+      <div className={styles.navLinksLg}>
         <Link
           href="/"
           className={styles.link}
@@ -32,7 +32,24 @@ export const Navbar = () => {
           className={styles.link}
           style={{ color: pathname === "/apicall" ? "#78281f" : "black" }}
         >
-          API Call
+          Weather
+        </Link>
+      </div>
+
+      <div className={styles.navLinksSm}>
+        <Link
+          href="/"
+          className={styles.link}
+          style={{ color: pathname === "/" ? "#78281f" : "black" }}
+        >
+          Home
+        </Link>
+        <Link
+          href="/apicall"
+          className={styles.link}
+          style={{ color: pathname === "/apicall" ? "#78281f" : "black" }}
+        >
+          Weather
         </Link>
       </div>
     </nav>

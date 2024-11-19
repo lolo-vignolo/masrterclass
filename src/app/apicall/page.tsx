@@ -57,6 +57,12 @@ const Apicall = () => {
 
   return (
     <div className={styles.container}>
+      <Image
+        src="/assets/dev_accelerator2.png"
+        alt="Weather"
+        width={500}
+        height={250}
+      />
       <h1 className={styles.title}>Weather in {city}</h1>
       <form onSubmit={handleSearch} className={styles.searchForm}>
         <input
