@@ -29,6 +29,10 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         {children}
+        <div style={{ height: "10rem", backgroundColor: "lightblue" }}>
+          {" "}
+          footer
+        </div>
       </body>
     </html>
   );

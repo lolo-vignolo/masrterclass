@@ -34,6 +34,13 @@ export const Navbar = () => {
         >
           Weather
         </Link>
+        <Link
+          href="/students"
+          className={styles.link}
+          style={{ color: pathname === "/students" ? "#78281f" : "black" }}
+        >
+          students
+        </Link>
       </div>
 
       <div className={styles.navLinksSm}>
