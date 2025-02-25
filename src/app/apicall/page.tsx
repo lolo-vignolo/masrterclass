@@ -22,30 +22,46 @@ const Apicall = () => {
 
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
 
-  const fetchWeather = (cityName: string) => {
+  const fetchWeather = async (cityName: string) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.cod === 200) {
-          setWeather(data);
-          setError(null);
-        } else {
-          setError(data.message);
-          setWeather(null);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-        setError("An error occurred. Please try again later.");
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.cod === 200) {
+        setWeather(data);
+        setError(null);
+      } else {
+        setError(data.message);
         setWeather(null);
-      });
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+      setError("An error occurred. Please try again later.");
+      setWeather(null);
+    }
   };
+
+  const casa = {
+    nombre: "Casa",
+    color: "Rojo",
+  };
+
+  const patio = {
+    nombre: "Casa",
+    color: "Rojo",
+  };
+
+  const a = 2;
+  const b = 2;
+
+  console.log(a === b);
+  console.log(casa === patio);
 
   useEffect(() => {
     fetchWeather(city);
-  }, [city]);
+  }, [casa.nombre]);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,6 +70,25 @@ const Apicall = () => {
       setInputCity("");
     }
   };
+
+  // const arrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  // const smallerThanFive = useMemo(
+  //   () => arrayNumbers.filter((number) => number < 5),
+  //   [arrayNumbers]
+  // );
+
+  // Memoriza handleSearch
+  // const handleSearch = useCallback(
+  //   (e: React.FormEvent<HTMLFormElement>) => {
+  //     e.preventDefault();
+  //     if (inputCity.trim()) {
+  //       setCity(inputCity);
+  //       setInputCity("");
+  //     }
+  //   },
+  //   [inputCity] // Dependencia de inputCity
+  // );
 
   return (
     <div className={styles.container}>
