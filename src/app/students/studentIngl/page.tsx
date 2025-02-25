@@ -2,7 +2,7 @@ const StudentsIng = () => {
   const students = [
     { name: "Juan", age: 20 },
     { name: "Pedro", age: 25 },
-    { name: "Maria", age: 30 },
+    { name: "Maria", age: 40 },
   ];
   return (
     <div
