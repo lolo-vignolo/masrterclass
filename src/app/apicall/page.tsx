@@ -107,7 +107,7 @@ const Apicall = () => {
           onChange={(e) => setInputCity(e.target.value)}
           className={styles.searchInput}
         />
-        <button type="submit" className={styles.searchButton}>
+        <button style={{color:"red"}} type="submit" className={styles.searchButton}>
           <FaSearch size={20} />
         </button>
       </form>
