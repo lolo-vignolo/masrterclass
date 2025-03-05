@@ -4,6 +4,7 @@ const StudentsIng = () => {
     { name: "Pedro", age: 25 },
     { name: "Maria", age: 70 },
   ];
+
   return (
     <div
       style={{ textAlign: "center", height: "50rem", backgroundColor: "red" }}
